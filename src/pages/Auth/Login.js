@@ -51,24 +51,27 @@ const Login = () => {
       console.error('Login error:', err);
       let errorMessage = 'Login failed. Please try again.';
       
-      switch (err.code) {
-        case 'auth/user-not-found':
-        case 'auth/wrong-password':
-          errorMessage = 'Invalid email or password';
-          break;
-        case 'auth/user-disabled':
-          errorMessage = 'This account has been disabled';
-          break;
-        case 'auth/too-many-requests':
-          errorMessage = 'Too many attempts. Please try again later.';
-          break;
-        case 'auth/invalid-email':
-          errorMessage = 'Invalid email address';
-          break;
-        case 'auth/network-request-failed':
-          errorMessage = 'Network error. Please check your connection.';
-          break;
-      }
+                switch (err.code) {
+            case 'auth/user-not-found':
+            case 'auth/wrong-password':
+              errorMessage = 'Invalid email or password';
+              break;
+            case 'auth/user-disabled':
+              errorMessage = 'This account has been disabled';
+              break;
+            case 'auth/too-many-requests':
+              errorMessage = 'Too many attempts. Please try again later.';
+              break;
+            case 'auth/invalid-email':
+              errorMessage = 'Invalid email address';
+              break;
+            case 'auth/network-request-failed':
+              errorMessage = 'Network error. Please check your connection.';
+              break;
+            default:
+              errorMessage = 'Login failed. Please try again.';
+          }
+
       
       setError(errorMessage);
     } finally {

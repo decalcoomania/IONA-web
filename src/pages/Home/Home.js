@@ -470,98 +470,122 @@ const HomePage = () => {
   </div>
 </div>
 
-      {/* Футер */}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-top">
-            {/* Бренд */}
-            <div className="footer-brand">
-              <div className="footer-logo">IONA</div>
-              <p className="footer-description">
-                Transforming hair and lives since 2013. 
-                Our expert team is dedicated to providing 
-                exceptional hair care services with premium 
-                products and personalized attention.
-              </p>
-              <div className="social-links">
-                <a href="#" className="social-link" aria-label="Instagram">
-                  <span>📷</span>
-                </a>
-                <a href="#" className="social-link" aria-label="Facebook">
-                  <span>📘</span>
-                </a>
-                <a href="#" className="social-link" aria-label="Twitter">
-                  <span>🐦</span>
-                </a>
-                <a href="#" className="social-link" aria-label="YouTube">
-                  <span>📺</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Посилання */}
-            <div className="footer-column">
-              <h3>Services</h3>
-              <ul className="footer-links">
-                <li><a href="#services">Hair Cutting</a></li>
-                <li><a href="#services">Coloring</a></li>
-                <li><a href="#services">Styling</a></li>
-                <li><a href="#services">Treatments</a></li>
-                <li><a href="#services">Extensions</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-column">
-              <h3>Company</h3>
-              <ul className="footer-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/iona-shop">IONA Shop</a></li>
-                <li><a href="/masters">Our Masters</a></li>
-                <li><a href="/ar-hair">VR Try-on</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#consultation">Consultation</a></li>
-                <li><a href="/profile">My Profile</a></li>
-              </ul>
-            </div>
-
-            {/* Контакти */}
-            <div className="footer-column">
-              <h3>Contact</h3>
-              <div className="footer-contact">
-                <p>
-                  <strong>Phone:</strong>
-                  <span>(068) 686-5427</span>
-                </p>
-                <p>
-                  <strong>Email:</strong>
-                  <span>IONAhelp@gmail.com</span>
-                </p>
-                <p>
-                  <strong>Address:</strong>
-                  <span>24 Patona Street, Lviv 79040</span>
-                </p>
-                <p>
-                  <strong>Hours:</strong>
-                  <span>Mon-Sat: 9AM-8PM</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Нижня частина футера */}
-          <div className="footer-bottom">
-            <div className="copyright">
-              © 2025 IONA Salon. All rights reserved.
-            </div>
-            <div className="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
-            </div>
-          </div>
+{/* Футер */}
+<footer className="footer">
+  <div className="footer-container">
+    <div className="footer-top">
+      {/* Бренд */}
+      <div className="footer-brand">
+        <div className="footer-logo">IONA</div>
+        <p className="footer-description">
+          Transforming hair and lives since 2013. 
+          Our expert team is dedicated to providing 
+          exceptional hair care services with premium 
+          products and personalized attention.
+        </p>
+        <div className="social-links">
+          <a
+            href="https://instagram.com/iona"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="Instagram"
+          >
+            📷
+          </a>
+          <a
+            href="https://facebook.com/iona"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="Facebook"
+          >
+            📘
+          </a>
+          <a
+            href="https://twitter.com/iona"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="Twitter"
+          >
+            🐦
+          </a>
+          <a
+            href="https://youtube.com/iona"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="YouTube"
+          >
+            📺
+          </a>
         </div>
-      </footer>
+      </div>
+
+      {/* Посилання */}
+      <div className="footer-column">
+        <h3>Services</h3>
+        <ul className="footer-links">
+          <li><a href="#services">Hair Cutting</a></li>
+          <li><a href="#services">Coloring</a></li>
+          <li><a href="#services">Styling</a></li>
+          <li><a href="#services">Treatments</a></li>
+          <li><a href="#services">Extensions</a></li>
+        </ul>
+      </div>
+
+      <div className="footer-column">
+        <h3>Company</h3>
+        <ul className="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/iona-shop">IONA Shop</a></li>
+          <li><a href="/masters">Our Masters</a></li>
+          <li><a href="/ar-hair">VR Try-on</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#consultation">Consultation</a></li>
+          <li><a href="/profile">My Profile</a></li>
+        </ul>
+      </div>
+
+      {/* Контакти */}
+      <div className="footer-column">
+        <h3>Contact</h3>
+        <div className="footer-contact">
+          <p>
+            <strong>Phone:</strong>
+            <span>(068) 686-5427</span>
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <span>IONAhelp@gmail.com</span>
+          </p>
+          <p>
+            <strong>Address:</strong>
+            <span>24 Patona Street, Lviv 79040</span>
+          </p>
+          <p>
+            <strong>Hours:</strong>
+            <span>Mon-Sat: 9AM-8PM</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Нижня частина футера */}
+    <div className="footer-bottom">
+      <div className="copyright">
+        © 2025 IONA Salon. All rights reserved.
+      </div>
+      <div className="footer-legal">
+        <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
+        <a href="/terms" className="footer-legal-link">Terms of Service</a>
+        <a href="/cookies" className="footer-legal-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
       {/* Кнопка назад наверх */}
       <button 

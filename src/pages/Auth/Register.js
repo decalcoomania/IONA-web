@@ -77,24 +77,23 @@ const Register = () => {
       login(user, userProfileData);
       navigate('/profile');
       
-    } catch (err) {
-      console.error('Registration error:', err);
-      let errorMessage = 'Registration failed. Please try again.';
-      
-      switch (err.code) {
-        case 'auth/email-already-in-use':
-          errorMessage = 'Email already in use. Please try another one.';
-          break;
-        case 'auth/invalid-email':
-          errorMessage = 'Invalid email address.';
-          break;
-        case 'auth/weak-password':
-          errorMessage = 'Password is too weak. Please use a stronger password.';
-          break;
-        case 'auth/operation-not-allowed':
-          errorMessage = 'Email/password sign-up is not enabled. Please contact support.';
-          break;
-      }
+   switch (err.code) {
+  case 'auth/email-already-in-use':
+    errorMessage = 'Email already in use. Please try another one.';
+    break;
+  case 'auth/invalid-email':
+    errorMessage = 'Invalid email address.';
+    break;
+  case 'auth/weak-password':
+    errorMessage = 'Password is too weak. Please use a stronger password.';
+    break;
+  case 'auth/operation-not-allowed':
+    errorMessage = 'Email/password sign-up is not enabled. Please contact support.';
+    break;
+  default:
+    errorMessage = 'Registration failed. Please try again.';
+}
+
       
       setError(errorMessage);
     } finally {
