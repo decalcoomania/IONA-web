@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+/* Основний хедер */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+  background: linear-gradient(135deg, #faffff 0%, #faffff 100%);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-content {
+  display: flex;
+  
+  justify-content: space-between;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: -180px;
+}
+/* Кнопка меню */
+.menu-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -210px;
+}
+
+.main-header.scrolled .menu-button {
+  background: #faffff;
+  border-color: rgba(1, 177, 168, 0.3);
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.main-header.scrolled .menu-button:hover {
+  background: white;
+  box-shadow: 0 5px 15px rgba(1, 177, 168, 0.3);
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 24px;
+}
+
+.menu-line {
+  width: 100%;
+  height: 2px;
+  background: #faffff;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled .menu-line {
+  background: #004747;
+}
+
+/* Логотип */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.logo-title {
+  color: white;
+  font-family: 'Gugi', cursive;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled .logo-title {
+  color: rgb(0, 172, 157);
+}
+
+/* Кнопка профілю */
+.profile-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  
+  margin-right: -180px;
+}
+
+.main-header.scrolled .profile-button {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 167, 158, 0.3);
+}
+
+.profile-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.main-header.scrolled .profile-button:hover {
+  background: #faffff;
+  box-shadow: 0 5px 15px rgba(1, 177, 168, 0.3);
+}
+
+.profile-icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled .profile-icon {
+  stroke: #01b1a8;
+}
+
+/* Бічне меню */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.side-menu.open {
+  pointer-events: all;
+}
+
+.menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.side-menu.open .menu-overlay {
+  opacity: 1;
+}
+
+.menu-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: linear-gradient(135deg, #01b1a8 0%, #019c94 100%);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.side-menu.open .menu-content {
+  transform: translateX(0);
+}
+
+.menu-header {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-menu:hover {
+  transform: scale(1.2);
+  color: #005153;
+}
+
+.menu-nav {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 15px;
+}
+
+.menu-link {
+  background: none;
+  border: none;
+  color: #faffff;
+  font-family: 'Gugi', cursive;
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+
+.menu-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+}
+
+.menu-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-book-btn {
+  background: white;
+  color: #01b1a8;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 30px;
+  font-family: 'Gugi', cursive;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  letter-spacing: 1px;
+}
+
+.menu-book-btn:hover {
+  background: #ffd700;
+  color: #01b1a8;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-btn-arrow {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.menu-book-btn:hover .menu-btn-arrow {
+  transform: translateX(10px);
+}
+
+/* Стилі для сторінки Masters */
+.masters-page .main-header.scrolled {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.masters-page .menu-line {
+  background: rgb(255, 255, 255);
+}
+
+.masters-page.main-header.scrolled .menu-line {
+  background: #00686b;
+}
+
+.masters-page .logo-title {
+  display: none;
+}
+
+/* Зміна шрифту меню на всіх сторінках */
+.menu-link {
+  font-family: 'M PLUS 1p', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+.menu-book-btn {
+  font-family: 'M PLUS 1p', sans-serif !important;
+}
+
+/* Для хедера на Masters при скролі */
+.masters-page.main-header.scrolled .menu-button {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(1, 177, 168, 0.3);
+}
+
+.masters-page.main-header.scrolled .profile-button {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 167, 158, 0.3);
+}
+
+.masters-page.main-header.scrolled .menu-button:hover {
+  background: white;
+  box-shadow: 0 5px 15px rgba(1, 177, 168, 0.3);
+}
+
+.masters-page.main-header.scrolled .profile-button:hover {
+  background: white;
+  box-shadow: 0 5px 15px rgba(1, 177, 168, 0.3);
+}
+/* Адаптивність */
+@media (max-width: 768px) {
+  .logo-title {
+    font-size: 24px;
+  }
+  
+  .menu-button,
+  .profile-button {
+    padding: 10px;
+  }
+  
+  .menu-content {
+    width: 250px;
+  }
+  
+  .menu-link {
+    font-size: 20px;
+    padding: 12px 15px;
+  }
+  
+  .menu-book-btn {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .menu-content {
+    width: 220px;
+  }
+  
+  .menu-link {
+    font-size: 18px;
+  }
+  
+  .menu-book-btn {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}

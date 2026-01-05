@@ -1,0 +1,714 @@
+/* Modal.css - стили для модального окна */
+
+/* Оверлей модального окна */
+.iona-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.iona-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Контент модального окна */
+.iona-modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 32px;
+  width: 95%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 60px 120px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.iona-modal-overlay.active .iona-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* Декоративна рамка зверху */
+.iona-modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #00b5ad, #38bdf8, #00b5ad);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+  z-index: 2;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Хедер модального окна */
+.iona-modal-header {
+  padding: 50px 60px 30px;
+  border-bottom: 2px solid #eef2f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: transparent;
+}
+
+.iona-modal-title {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  color: #00525C;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 25px;
+  background: linear-gradient(135deg, #00525C, #008888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.iona-modal-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 8px;
+  background: linear-gradient(to bottom, #00b5ad, #38bdf8);
+  border-radius: 4px;
+}
+
+/* Кнопка закрытия */
+.iona-close-modal {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+  font-size: 32px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.iona-close-modal:hover {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #00525C;
+  border-color: #00525C;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 82, 92, 0.15);
+}
+
+/* Тело модального окна */
+.iona-modal-body {
+  padding: 40px 60px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+  background: transparent;
+}
+
+/* Левая часть - история */
+.iona-modal-story {
+  padding-right: 20px;
+}
+
+.iona-modal-text {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #475569;
+  margin-bottom: 35px;
+}
+
+.iona-modal-text p {
+  margin-bottom: 28px;
+  font-size: 18px;
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+}
+
+.iona-modal-text p:last-child {
+  margin-bottom: 0;
+}
+
+.iona-modal-text strong {
+  color: #00525C;
+  font-weight: 700;
+  position: relative;
+}
+
+.iona-modal-text strong::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00b5ad, transparent);
+  border-radius: 1px;
+}
+
+/* Выделенный блок */
+.iona-modal-highlight {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-left: 5px solid #00b5ad;
+  padding: 30px;
+  margin: 40px 0;
+  border-radius: 0 16px 16px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 181, 173, 0.1);
+  margin-top: -25px;
+}
+
+.iona-modal-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b5ad' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.iona-modal-highlight h4 {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #00525C;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.iona-modal-highlight p {
+  font-size: 17px;
+  color: #334155;
+  margin: 0;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+}
+
+/* Правая часть - карта и контакты */
+.iona-modal-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: -10px;
+}
+
+/* Карта */
+.iona-map-container {
+  height: 300px;
+  
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ffffff;
+  position: relative;
+}
+
+.iona-map-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.iona-map-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: saturate(1.2) contrast(1.1);
+}
+
+.iona-map-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 10;
+  animation: ionaMarkerPulse 2s infinite;
+}
+
+.iona-map-marker-dot {
+  width: 24px;
+  height: 24px;
+  background: #ef4444;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 0 15px rgba(239, 68, 68, 0.25);
+}
+
+.iona-map-marker-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+@keyframes ionaMarkerPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.iona-map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 82, 92, 0.95) 0%, rgba(0, 82, 92, 0.8) 50%, transparent 100%);
+  padding: 25px;
+  color: white;
+}
+
+.iona-map-info h4 {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.iona-map-address {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.iona-map-address::before {
+  content: '📍';
+  font-size: 18px;
+}
+
+.iona-map-hours {
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.iona-map-hours::before {
+  content: '🕒';
+  font-size: 16px;
+}
+
+/* Карточка контактов */
+.iona-contact-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  margin-top: -20px;
+  height: 350px;
+}
+
+.iona-contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #00b5ad, #38bdf8);
+  border-radius: 0 0 5px 5px;
+}
+
+.iona-contact-card h4 {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #00525C;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.iona-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.iona-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.iona-contact-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #00525C;
+  flex-shrink: 0;
+  border: 1px solid #cbd5e1;
+}
+
+.iona-contact-details {
+  flex: 1;
+}
+
+.iona-contact-label {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.iona-contact-value {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.iona-contact-value a {
+  color: #00525C;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.iona-contact-value a:hover {
+  color: #00b5ad;
+  text-decoration: underline;
+}
+
+/* Кнопки карты */
+.iona-map-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.iona-map-btn {
+  padding: 16px 20px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  color: #00525C;
+  border-radius: 12px;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.iona-map-btn:hover {
+  background: #f1f5f9;
+  border-color: #00525C;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 82, 92, 0.15);
+}
+
+.iona-map-btn.primary {
+  background: linear-gradient(135deg, #00525C 0%, #008888 100%);
+  border-color: #00525C;
+  color: white;
+}
+
+.iona-map-btn.primary:hover {
+  background: linear-gradient(135deg, #004046 0%, #006666 100%);
+  border-color: #004046;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 82, 92, 0.25);
+}
+
+/* Футер модального окна */
+.iona-modal-footer {
+  padding: 35px 60px 45px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-top: 2px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.iona-modal-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+}
+
+.iona-modal-cta {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #00525C;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.iona-book-appointment-btn {
+  padding: 18px 40px;
+  background: linear-gradient(135deg, #00b5ad 0%, #38bdf8 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 25px rgba(0, 181, 173, 0.3);
+}
+
+.iona-book-appointment-btn:hover {
+  background: linear-gradient(135deg, #009c94 0%, #0ea5e9 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 181, 173, 0.4);
+}
+
+.iona-book-appointment-btn:active {
+  transform: translateY(-1px) scale(1);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .iona-modal-content {
+    width: 98%;
+  }
+  
+  .iona-modal-header,
+  .iona-modal-body,
+  .iona-modal-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .iona-modal-body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .iona-modal-story {
+    padding-right: 0;
+  }
+  
+  .iona-modal-header {
+    padding: 40px 30px 25px;
+  }
+  
+  .iona-modal-body {
+    padding: 30px;
+  }
+  
+  .iona-modal-footer {
+    padding: 30px 30px 40px;
+  }
+  
+  .iona-modal-title {
+    font-size: 36px;
+  }
+  
+  .iona-modal-text p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .iona-modal-content {
+    width: 100%;
+    border-radius: 24px;
+    margin: 10px;
+  }
+  
+  .iona-modal-header {
+    padding: 35px 25px 20px;
+  }
+  
+  .iona-modal-body {
+    padding: 25px;
+    gap: 35px;
+  }
+  
+  .iona-modal-footer {
+    padding: 25px 25px 35px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .iona-modal-title {
+    font-size: 32px;
+  }
+  
+  .iona-close-modal {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+  
+  .iona-map-container {
+    height: 280px;
+  }
+  
+  .iona-map-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .iona-contact-card {
+    padding: 30px 25px;
+  }
+  
+  .iona-book-appointment-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .iona-modal-overlay {
+    padding: 15px;
+  }
+  
+  .iona-modal-header {
+    padding: 30px 20px 20px;
+  }
+  
+  .iona-modal-body {
+    padding: 20px;
+  }
+  
+  .iona-modal-footer {
+    padding: 25px 20px 30px;
+  }
+  
+  .iona-modal-title {
+    font-size: 28px;
+    padding-left: 20px;
+  }
+  
+  .iona-modal-title::before {
+    width: 6px;
+  }
+  
+  .iona-modal-text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  .iona-modal-highlight {
+    padding: 25px 20px;
+  }
+  
+  .iona-map-container {
+    height: 250px;
+  }
+  
+  .iona-contact-card {
+    padding: 25px 20px;
+  }
+  
+  .iona-contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .iona-contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .iona-contact-value {
+    font-size: 16px;
+  }
+}
