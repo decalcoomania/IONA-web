@@ -478,6 +478,7 @@
 @media (max-width: 480px) {
   .logo-title {
     font-size: 24px;
+    transform: translateX(50px);
   }
   
   .menu-content {
@@ -508,6 +509,7 @@
   .logo-title {
     font-size: 22px;
     letter-spacing: 1px;
+    
   }
   
   .menu-content {

@@ -1114,6 +1114,7 @@
     transform: none;
     margin-top: -50px;
     margin-bottom: 80px;
+    margin-left: -270px;
   }
   
   .stats-block {
@@ -1371,10 +1372,13 @@
   .stats-block {
     padding: 20px 10px;
     border-radius: 15px;
-    transform: translateX(-100px); /* +50px лівіше */
-    margin-left: 100px;
+    transform: translateX(50px);
+    margin-left: 50px;
   }
-  
+  .stats-container{
+    transform: translateX(-50px);
+    margin-left: 50px;
+  }
   .stats-grid {
     gap: 20px;
   }
@@ -1433,10 +1437,13 @@
   .stats-block {
     padding: 15px 10px;
     border-radius: 12px;
-    transform: translateX(-100px); /* +50px лівіше */
-    margin-left: 100px;
+    transform: translateX(-0px);
+    margin-left: 0px;
   }
-  
+  .stats-container{
+    transform: translateX(-0px);
+    margin-left: 0px;
+  }
   .stat-number {
     font-size: 36px;
   }
