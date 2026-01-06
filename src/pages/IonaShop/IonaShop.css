@@ -1147,186 +1147,632 @@
 }
 
 /* Адаптивність */
-@media (max-width: 1200px) {
-  .shop-container {
-    padding: 20px 30px;
-  }
-  
-  .main-content-wrapper {
-    flex-direction: column;
-  }
-  
-  .products-list-section,
-  .special-offers-sidebar {
-    width: 100%;
-    min-width: auto;
-  }
-  
-  .special-offers-sidebar {
-    margin-top: 20px;
-  }
-  
-  .product-image-container {
-    width: 120px;
-  }
-}
-
-@media (max-width: 992px) {
-  .filters-sidebar {
-    width: 240px;
-    min-width: 240px;
-  }
-  
-  .product-item {
-    min-height: 140px;
-  }
-  
-  .product-image-container {
-    width: 100px;
-  }
-}
+/* ========== МОБІЛЬНА АДАПТАЦІЯ ДЛЯ МАГАЗИНУ ========== */
 
 @media (max-width: 768px) {
+  .shop-page {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
   .shop-container {
     flex-direction: column;
-    padding: 15px 20px;
+    padding: 10px;
+    gap: 15px;
+    margin-top: 60px;
+    overflow: visible;
+    height: auto;
+  }
+  
+  /* Кнопка кошика - зменшуємо і піднімаємо вище */
+  .cart-icon-button {
+    top: 70px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    z-index: 1001;
+  }
+  
+  .cart-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .cart-badge {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    top: -3px;
+    right: -3px;
+  }
+  
+  /* Фільтри на мобільних */
+  .filters-sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-height: none;
+    height: auto;
+    margin: 0 0 15px 0;
+    padding: 15px;
+    border-radius: 16px;
+    position: static;
+  }
+  
+  .filters-container {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     height: auto;
   }
   
-  .filters-sidebar {
-    width: 100%;
-    min-width: auto;
-    max-height: none;
-    height: auto;
-    margin-left: 0;
-    padding: 20px;
+  .filters-title {
+    font-size: 22px;
+    text-align: left;
+    margin-bottom: 10px;
   }
   
+  /* Фільтри вже мають закривашку, тільки зменшуємо розміри */
+  .filter-section {
+    margin-bottom: 10px;
+    padding: 12px;
+  }
+  
+  .filter-section-header {
+    padding: 3px 0;
+  }
+  
+  .filter-section-title {
+    font-size: 14px;
+  }
+  
+  .expand-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+  
+  .filter-option {
+    margin-bottom: 5px;
+  }
+  
+  .filter-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .filter-label {
+    font-size: 13px;
+  }
+  
+  /* Кошик в бічній панелі на мобільних */
+  .cart-summary-sidebar {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  
+  .cart-summary-header {
+    margin-bottom: 10px;
+  }
+  
+  .cart-items-count {
+    font-size: 12px;
+  }
+  
+  .cart-summary-info {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .cart-total-text {
+    font-size: 14px;
+  }
+  
+  .cart-total-price {
+    font-size: 16px;
+  }
+  
+  .cart-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .reset-btn {
+    padding: 12px 15px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Основний контент */
   .shop-content {
     max-height: none;
-    height: auto;
-    flex: 1;
+    overflow: visible;
     margin-right: 0;
   }
   
   .shop-card {
+    padding: 15px;
     height: auto;
-    min-height: 0;
-    padding: 20px;
+    min-height: calc(100vh - 80px);
+    overflow: visible;
   }
   
   .shop-title {
-    font-size: 32px;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  
+  .shop-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  
+  /* Основний контент - колонки стають вертикальними */
+  .main-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;
+  }
+  
+  .products-list-section {
+    width: 100%;
+    order: 2; /* Продукти під акціями */
   }
   
   .list-header {
     flex-direction: column;
-    gap: 10px;
     align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
   }
   
-  .product-info {
-    flex-direction: column;
-    gap: 10px;
+  .list-title {
+    font-size: 18px;
   }
   
+  .results-count {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  /* Список продуктів - вертикальні картки */
   .products-list {
-    max-height: 400px;
-  }
-  
-  .order-modal {
-    width: 95%;
-    max-height: 85vh;
+    overflow: visible;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   
   .product-item {
-    gap: 15px;
-    min-height: 130px;
+    flex-direction: column;
+    gap: 12px;
+    min-height: auto;
+    padding: 12px;
+    margin-bottom: 0;
   }
   
   .product-image-container {
-    width: 80px;
+    width: 100%;
+    height: 140px;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .product-content {
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .product-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
   
   .product-name {
     font-size: 16px;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .product-price {
+    align-self: flex-start;
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+  
+  .product-info {
+    margin-top: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .product-brand,
+  .product-category,
+  .product-availability {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-top: 0;
+  }
+  
+  .product-description {
+    font-size: 13px;
+    margin-top: 5px;
+    line-height: 1.3;
+    flex: 1;
+  }
+  
+  .product-actions {
+    margin-top: 0;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .add-to-cart-btn,
+  .order-now-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* SPECIAL OFFERS - вирівнюємо під All Products */
+  .special-offers-sidebar {
+    width: 100%;
+    min-width: 100%;
+    order: 1; /* Акції над продуктами */
+  }
+  
+  .offers-sidebar-content {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .offers-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .offers-subtitle {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .offers-list {
+    gap: 12px;
+  }
+  
+  /* Картки акцій - робимо схожими на продукти */
+  .offer-sidebar-card {
+    flex-direction: column;
+    gap: 12px;
+    min-height: auto;
+    padding: 12px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    height: auto;
+    transform: none;
+  }
+  
+  .offer-sidebar-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .offer-badge {
+    margin-top: 0;
+    margin-left: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
   }
   
   .offer-image-container {
-    height: 100px;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .offer-image {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00525C 0%, #00525C 100%);
   }
   
   .offer-image .image-text {
     font-size: 40px;
   }
   
-  .cart-icon-button {
-    top: 80px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+  /* Вирівнюємо контент акцій як у продуктів */
+  .offer-sidebar-content {
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .offer-sidebar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .offer-sidebar-name {
+    font-size: 16px;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    color: #2c3e50;
+  }
+  
+  .offer-sidebar-price {
+    margin-top: 0;
+    margin-left: 0;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .current-price {
+    font-size: 18px;
+    transform: none;
+    color: #00525C;
+  }
+  
+  .original-price {
+    font-size: 14px;
+    transform: none;
+    color: #888;
+    text-decoration: line-through;
+  }
+  
+  .offer-sidebar-description {
+    font-size: 13px;
+    margin-top: 0;
+    margin-left: 0;
+    color: #666;
+    line-height: 1.3;
+    flex: 1;
+  }
+  
+  .offer-products {
+    margin-bottom: 15px;
+    margin-left: 0;
+    font-size: 11px;
+    color: #888;
+  }
+  
+  .offer-sidebar-btn {
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #00525C 0%, #00525C 100%);
+  }
+  
+  .offers-note {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    transform: none;
+  }
+  
+  /* Прибираємо скролбар на мобільних */
+  .products-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .products-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Модальні вікна на мобільних */
+  .cart-modal,
+  .order-modal {
+    width: 95%;
+    max-width: 95%;
+    max-height: 90vh;
+    margin: 0 10px;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item-info {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .quantity-controls {
+    align-self: flex-start;
+  }
+  
+  .remove-btn {
+    align-self: flex-start;
+  }
+  
+  .empty-cart {
+    padding: 40px 20px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .radio-option {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
   }
 }
 
+/* Для маленьких екранів (до 480px) */
 @media (max-width: 480px) {
   .shop-container {
-    padding: 10px 15px;
+    padding: 8px;
+    margin-top: 55px;
   }
   
   .shop-card {
-    padding: 15px;
-    border-radius: 18px;
+    padding: 12px;
   }
   
   .shop-title {
-    font-size: 26px;
+    font-size: 22px;
+  }
+  
+  .shop-subtitle {
+    font-size: 12px;
+  }
+  
+  /* Фільтри */
+  .filters-sidebar {
+    padding: 12px;
   }
   
   .filters-title {
-    font-size: 22px;
+    font-size: 20px;
   }
   
-  .product-name {
-    font-size: 16px;
-  }
-  
-  .add-to-cart-btn,
-  .order-now-btn {
-    padding: 8px 16px;
+  .filter-section-title {
     font-size: 13px;
   }
   
-  .offers-title,
-  .list-title {
-    font-size: 22px;
+  .filter-label {
+    font-size: 12px;
   }
   
   .reset-btn {
+    padding: 10px 12px;
     font-size: 13px;
-    padding: 7px 10px;
   }
   
-  .modal-title {
-    font-size: 22px;
-  }
-  
-  .product-item {
-    flex-direction: column;
-    gap: 15px;
-    min-height: auto;
-  }
-  
-  .product-image-container {
-    width: 100%;
+  /* Картинки */
+  .product-image-container,
+  .offer-image-container {
     height: 120px;
   }
   
-  .product-content {
-    min-height: auto;
+  .product-name,
+  .offer-sidebar-name {
+    font-size: 15px;
+  }
+  
+  .product-price,
+  .current-price {
+    font-size: 16px;
+  }
+  
+  /* Кнопка кошика ще менша */
+  .cart-icon-button {
+    top: 65px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Для дуже маленьких екранів (до 360px) */
+@media (max-width: 360px) {
+  .shop-title {
+    font-size: 20px;
+  }
+  
+  .list-title,
+  .offers-title {
+    font-size: 16px;
+  }
+  
+  .product-image-container,
+  .offer-image-container {
+    height: 100px;
+  }
+  
+  .add-to-cart-btn,
+  .order-now-btn,
+  .offer-sidebar-btn {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* Горизонтальна орієнтація на мобільних */
+@media (max-width: 768px) and (orientation: landscape) {
+  .shop-container {
+    margin-top: 50px;
+  }
+  
+  .products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+  }
+  
+  .product-item {
+    min-height: 200px;
+  }
+  
+  .offers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
   }
   
   .offer-sidebar-card {
-    min-height: 250px;
+    min-height: 200px;
+  }
+}
+
+/* Фікс для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .shop-page {
+    height: -webkit-fill-available;
+  }
+  
+  .shop-container {
+    min-height: -webkit-fill-available;
   }
 }

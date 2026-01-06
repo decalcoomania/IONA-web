@@ -36,7 +36,7 @@ button, input, textarea, select {
 }
 
 /* Фільтри зліва */
-.filters-sidebar {
+.filters-sidebars {
   width: 260px;
   min-width: 260px;
   background: white;
@@ -48,7 +48,7 @@ button, input, textarea, select {
   margin-left: 20px;
 }
 
-.filters-container {
+.filters-containers {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1387,244 +1387,526 @@ button, input, textarea, select {
 }
 
 /* Адаптивність для випадаючого меню */
+/* ========== ФІКСИ ДЛЯ МОБІЛЬНИХ ========== */
+/* ========== МОБІЛЬНА АДАПТАЦІЯ ========== */
+
+/* Загальні стилі для мобільних */
 @media (max-width: 768px) {
-  .dropdown-menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 400px;
-    max-height: 60vh;
+  .services-page {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
   }
   
-  .dropdown-item-content {
-    gap: 10px;
-  }
-  
-  .dropdown-item-icon,
-  .dropdown-item-avatar {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .services-container {
-    padding: 20px 30px;
-  }
-  
-  .main-content-wrapper {
-    flex-direction: column;
-  }
-  
-  .services-list-section,
-  .special-offers-sidebar {
-    width: 100%;
-    min-width: auto;
-  }
-  
-  .special-offers-sidebar {
-    margin-top: 20px;
-  }
-  
-  .service-image-container {
-    width: 120px;
-  }
-}
-
-@media (max-width: 992px) {
-  .filters-sidebar {
-    width: 240px;
-    min-width: 240px;
-  }
-  
-  .time-slots {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .service-item {
-    min-height: 140px;
-  }
-  
-  .service-image-container {
-    width: 100px;
-  }
-}
-
-@media (max-width: 768px) {
   .services-container {
     flex-direction: column;
-    padding: 15px 20px;
+    padding: 10px;
     gap: 15px;
+    margin-top: 60px;
+    overflow: visible;
     height: auto;
   }
   
-  .filters-sidebar {
-    width: 100%;
-    min-width: auto;
-    max-height: none;
-    height: auto;
-    margin-left: 0;
-    padding: 20px;
-  }
-  
+  /* Фікс для фіксованого header */
   .services-content {
     max-height: none;
-    height: auto;
-    flex: 1;
+    overflow: visible;
     margin-right: 0;
   }
   
   .services-card {
+    padding: 15px;
     height: auto;
-    min-height: 0;
-    padding: 20px;
+    min-height: calc(100vh - 80px);
+    overflow: visible;
   }
   
+  /* Заголовки */
   .services-titles {
-    font-size: 32px;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  
+  .services-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  
+  /* ГОРИЗОНТАЛЬНІ ФІЛЬТРИ */
+  .filters-sidebars {
+    width: 100%;
+    min-width: 100%;
+    max-height: none;
+    height: 200px;
+    margin: 0 0 15px 0;
+    padding: 15px;
+    border-radius: 16px;
+    position: static;
+  }
+  
+  .filters-containers {
+    display: block;
+    height: 200px;
+  }
+  
+  .filterss-title {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 15px;
+    display: none; /* Приховуємо заголовок Filters на мобільних */
+  }
+  
+  .filters-section {
+    display: inline-block;
+    vertical-align: top;
+    width: 32%;
+    margin-bottom: 0;
+    padding-right: 10px;
+  }
+  
+  .filters-section:last-child {
+    padding-right: 0;
+  }
+  
+  .filters-section-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .filters-option {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+  
+  .filter-option {
+    margin-bottom: 6px;
+  }
+  
+  .filters-label {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  
+  /* Кнопка скидання фільтрів - робимо плаваючою */
+  .reset-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: 20px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 0;
+  }
+  
+  /* Основний контент */
+  .main-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;
+  }
+  
+  .services-list-section {
+    width: 100%;
+    order: 2; /* Послуги під фільтрами */
   }
   
   .list-header {
     flex-direction: column;
-    gap: 10px;
     align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
   }
   
-  .service-info {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .services-list {
-    max-height: 400px;
-  }
-  
-  .time-slots {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .booking-modal {
-    width: 95%;
-    max-height: 85vh;
-    margin: 0 16px;
-  }
-  
-  .service-item {
-    gap: 15px;
-    min-height: 130px;
-  }
-  
-  .service-image-container {
-    width: 80px;
-    height: 100px;
-  }
-  
-  .service-name {
-    font-size: 16px;
-  }
-  
-  .offer-images-container {
-    width: 80px;
-    height: 100px;
-  }
-  
-  .offer-images .images-text {
-    font-size: 30px;
-  }
-  
-  .offers-sidebar-name {
-    font-size: 16px;
-  }
-  
-  .modal-title {
-    font-size: 20px;
-  }
-  
-  .form-actions {
-    flex-direction: column;
-  }
-  
-  .cancel-btn,
-  .submits-btn {
-    width: 100%;
-  }
-  
-  .masters-selection-list {
-    max-height: 300px;
-    overflow-y: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-container {
-    padding: 10px 15px;
-  }
-  
-  .services-card {
-    padding: 15px;
-    border-radius: 18px;
-  }
-  
-  .services-titles {
-    font-size: 26px;
-  }
-  
-  .filterss-title {
-    font-size: 22px;
-  }
-  
-  .service-name {
-    font-size: 16px;
-  }
-  
-  .book-btn {
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-  
-  .offers-titles,
   .lists-title {
-    font-size: 22px;
+    font-size: 18px;
   }
   
-  .reset-btn {
-    font-size: 13px;
-    padding: 7px 10px;
+  .results-count {
+    font-size: 12px;
+    padding: 4px 8px;
   }
   
-  .modal-title {
-    font-size: 22px;
-  }
-  
-  .time-slots {
-    grid-template-columns: 1fr;
+  /* Список послуг - фікс скролу */
+  .services-list {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
   }
   
   .service-item {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     min-height: auto;
+    padding: 12px;
+    margin-bottom: 0;
+    height: auto;
   }
   
   .service-image-container {
     width: 100%;
-    height: 120px;
+    height: 140px;
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
   }
   
   .service-content {
-    min-height: auto;
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .service-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .service-name {
+    font-size: 16px;
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .service-price {
+    align-self: flex-start;
+    font-size: 18px;
+    padding: 6px 12px;
+    margin-top: 50px;
+  }
+  
+  .service-description {
+    font-size: 13px;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: 1.3;
+  }
+  
+  .service-info {
+    margin-left: 0;
+    margin-bottom: 15px;
+    gap: 8px;
+  }
+  
+  .service-duration,
+  .service-category {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  .book-btn {
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* SPECIAL OFFERS - ФІКС ЦІН */
+  .special-offers-sidebar {
+    width: 100%;
+    min-width: 100%;
+    order: 1; /* Акції над послугами */
+  }
+  
+  .offers-sidebar-contents {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .offers-titles {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .offers-subtitles {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .offers-list {
+    gap: 15px;
   }
   
   .offer-sidebar-card {
     flex-direction: column;
+    gap: 15px;
     min-height: auto;
+    padding: 15px;
   }
   
   .offer-images-container {
+    width: 100px;
+    height: 90px;
+  }
+  
+  .offer-images {
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .offer-sidebar-content {
+    margin-left: 0;
+    margin-top: 0;
     width: 100%;
+  }
+  
+  .offers-sidebar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 0;
+    width: 100%;
+  }
+  
+  .offers-sidebar-name {
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .offer-price-infos {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: auto;
+    margin-left: 0;
+  }
+  
+  .offer-pricess {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-right: 0;
+    margin-top: 0;
+    transform: none;
+  }
+  
+  .original-pricess {
+    font-size: 14px;
+    margin-right: 0;
+    margin-top: 70px;
+    text-align: left;
+    margin-left: 110px;
+    transform: translateX(50px);
+  }
+  
+  .current-pricess {
+    font-size: 20px;
+    margin-right: 0;
+    margin-top: 105px;
+    text-align: left;
+    margin-left: -50px;
+    transform: translateX(52px);
+  }
+  
+  .offers-discount {
+    margin-right: 0;
+    margin-top: -30px;
+    transform: none;
+    padding: 4px 8px;
+    font-size: 12px;
+    transform: translateX(-250px);
+  }
+  
+  .offer-sidebar-descriptions {
+    font-size: 13px;
+    margin-left: 160px;
+    line-height: 1.3;
+    
+    transform: translateY(-80px);
+  }
+  
+  .offers-sidebar-btn {
+    margin-left: 0;
+    width: 100px;
+    padding: 8px;
+    font-size: 14px;
+    transform: translateX(160px);
+    margin-top: -30px;
+  }
+  
+  .offers-notes {
+    font-size: 11px;
+    margin-top: 15px;
+    padding-top: 10px;
+  }
+  
+  /* Прибираємо скролбар на мобільних */
+  .services-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .services-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Фікс для того, щоб сторінка не різалась зверху */
+  .services-page > div {
+    overflow: visible;
+  }
+}
+
+/* Для екранів менше 480px */
+@media (max-width: 480px) {
+  .services-container {
+    padding: 8px;
+    margin-top: 55px;
+  }
+  
+  .services-card {
+    padding: 12px;
+  }
+  
+  .services-titles {
+    font-size: 22px;
+  }
+  
+  .services-subtitle {
+    font-size: 12px;
+  }
+  
+  /* Фільтри стають ще компактнішими */
+  .filters-sidebars {
+    padding: 12px;
+  }
+  
+  .filters-section {
+    width: 31%;
+    padding-right: 8px;
+  }
+  
+  .filters-section-title {
+    font-size: 11px;
+  }
+  
+  .filters-label {
+    font-size: 10px;
+  }
+  
+  /* Список послуг - 1 колонка */
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-image-container {
+    height: 130px;
+  }
+  
+  .service-name {
+    font-size: 15px;
+  }
+  
+  .service-price {
+    font-size: 16px;
+  }
+  
+  /* Акції */
+  .offers-sidebar-contents {
+    padding: 15px;
+  }
+  
+  .offer-images-container {
+    height: 110px;
+  }
+  
+  .offer-price-infos {
+    flex-wrap: wrap;
+  }
+  
+  .offers-discount {
+    margin-top: 8px;
+  }
+}
+
+/* Для екранів менше 360px */
+@media (max-width: 360px) {
+  .filters-section {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    padding-right: 0;
+  }
+  
+  .filters-section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .filters-option {
+    max-height: 80px;
+  }
+  
+  .reset-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  
+  .services-titles {
+    font-size: 20px;
+  }
+  
+  .service-image-container {
+    height: 120px;
+  }
+}
+
+/* Фікс для горизонтальної орієнтації на мобільних */
+@media (max-width: 768px) and (orientation: landscape) {
+  .services-container {
+    margin-top: 50px;
+  }
+  
+  .filters-section {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+  
+  .service-image-container {
     height: 100px;
   }
+  
+  .services-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .offers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+  }
+  
+  .offer-sidebar-card {
+    min-height: 180px;
+  }
+}
+
+/* Фікс для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .services-page {
+    height: -webkit-fill-available;
+  }
+  
+  .services-container {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Запобігання ресайзу тексту на iOS */
+input, textarea, select {
+  font-size: 16px !important;
 }

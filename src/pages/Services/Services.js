@@ -374,6 +374,44 @@ const handleBookNow = (service) => {
     }
     return dates;
   };
+  // Додайте цей код у ваш компонент React в кінець, але перед export default Services;
+
+useEffect(() => {
+  // Акордеон для фільтрів
+  const filterSections = document.querySelectorAll('.filters-section-title');
+  
+  filterSections.forEach(section => {
+    section.addEventListener('click', () => {
+      section.classList.toggle('active');
+    });
+  });
+  
+  // Клік на заголовок Filters розкриває/закриває всі секції
+  const filtersTitle = document.querySelector('.filterss-title');
+  if (filtersTitle) {
+    filtersTitle.addEventListener('click', () => {
+      const isActive = filtersTitle.classList.toggle('active');
+      const allSections = document.querySelectorAll('.filters-section');
+      allSections.forEach(section => {
+        if (isActive) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+    });
+  }
+  
+  return () => {
+    // Cleanup event listeners if needed
+    filterSections.forEach(section => {
+      section.removeEventListener('click', () => {});
+    });
+    if (filtersTitle) {
+      filtersTitle.removeEventListener('click', () => {});
+    }
+  };
+}, []);
 // Додайте цей useEffect після інших useEffect
 useEffect(() => {
   const handleClickOutside = (event) => {
@@ -394,8 +432,8 @@ useEffect(() => {
       {/* Головний контейнер */}
       <div className="services-container">
         {/* Фільтри зліва */}
-        <div className="filters-sidebar">
-          <div className="filters-container">
+        <div className="filters-sidebars">
+          <div className="filters-containers">
             <h2 className="filterss-title">Filters</h2>
             
             {/* Цінові діапазони */}
@@ -880,6 +918,7 @@ useEffect(() => {
       </div>
     </div>
   </div>
+  
 )}
 
     </div>

@@ -896,7 +896,7 @@
     padding: 50px 60px;
     height: 220px;
     transform: translateX(-100px); /* +50px лівіше */
-    margin-left: 100px;
+    margin-left: 80px;
   }
   
   .stat-number {
@@ -1114,7 +1114,7 @@
     transform: none;
     margin-top: -50px;
     margin-bottom: 80px;
-    margin-left: -270px;
+    margin-left: -250px;
   }
   
   .stats-block {
@@ -1373,7 +1373,7 @@
     padding: 20px 10px;
     border-radius: 15px;
     transform: translateX(50px);
-    margin-left: 50px;
+    margin-left: 10px;
   }
   .stats-container{
     transform: translateX(-50px);

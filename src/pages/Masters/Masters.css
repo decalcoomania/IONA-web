@@ -679,6 +679,11 @@
 }
 
 /* ============ RESPONSIVE DESIGN ============ */
+/* Додайте цей код в кінець файлу Masters.css */
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Планшети (горизонтальні) */
 @media (max-width: 1100px) {
   .masters-carousel-track {
     width: 700px;
@@ -687,8 +692,17 @@
   .masters-card {
     width: 700px;
   }
+  
+  .masters-main-title {
+    font-size: 3rem;
+  }
+  
+  .masters-section-title {
+    font-size: 2.2rem;
+  }
 }
 
+/* Планшети (вертикальні) */
 @media (max-width: 900px) {
   .masters-features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -703,4 +717,470 @@
     width: 600px;
     height: 400px;
   }
+  
+  .masters-card-name {
+    font-size: 28px;
+  }
+  
+  .masters-card-position {
+    font-size: 16px;
+  }
+  
+  .masters-main-title {
+    font-size: 2.8rem;
+  }
+  
+  .masters-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* Великі мобільні пристрої */
+@media (max-width: 768px) {
+  .masters-hero-section {
+    padding: 60px 15px 40px;
+  }
+  
+  .masters-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .masters-hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  .masters-stats-grid {
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .masters-stat-item {
+    min-width: 180px;
+    padding: 14px 20px;
+  }
+  
+  .masters-carousel {
+    gap: 15px;
+    min-height: 450px;
+    margin-top: 0;
+  }
+  
+  .masters-carousel-track {
+    width: 500px;
+    height: 450px;
+  }
+  
+  .masters-card {
+    width: 500px;
+    height: 450px;
+    flex-direction: column;
+  }
+  
+  .masters-card-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .masters-card-info {
+    width: 100%;
+    padding: 25px;
+    height: calc(100% - 200px);
+  }
+  
+  .masters-card-name {
+    font-size: 24px;
+  }
+  
+  .masters-card-position {
+    font-size: 15px;
+  }
+  
+  .masters-card-details {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -130px;
+    margin-left: -10px;
+    width: calc(100% - 82px);
+  }
+  
+  .masters-card-description {
+    font-size: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .masters-reviews-btn {
+    padding: 3px 3px;
+    font-size: 15px;
+    margin-top: -230px;
+    width: 150px;
+    height: 45px;
+    margin-left: 210px;
+    font-size: 11px;
+  }
+  
+  .masters-carousel-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Info Section */
+  .masters-info-section {
+    padding: 60px 15px;
+  }
+  
+  .masters-section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .masters-features-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 60px;
+  }
+  
+  .masters-feature-card {
+    padding: 30px 20px;
+  }
+  
+  .masters-favorites-section {
+    padding: 35px 25px;
+    margin: 60px 0;
+  }
+  
+  .masters-favorites-header h3 {
+    font-size: 1.8rem;
+  }
+  
+  .masters-view-favorites-btn {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+  
+  .masters-booking-cta {
+    padding: 40px 25px;
+    margin-top: 40px;
+  }
+  
+  .masters-booking-cta h3 {
+    font-size: 1.8rem;
+  }
+  
+  .masters-cta-button {
+    padding: 16px 40px;
+    font-size: 16px;
+  }
+}
+
+/* Середні мобільні пристрої */
+@media (max-width: 576px) {
+  .masters-hero-section {
+    padding: 50px 12px 30px;
+  }
+  
+  .masters-main-title {
+    font-size: 2.2rem;
+    margin-top: -10px;
+  }
+  
+  .masters-hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .masters-stats-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .masters-stat-item {
+    width: 100%;
+    max-width: 280px;
+    justify-content: flex-start;
+  }
+  
+  .masters-carousel {
+    min-height: 400px;
+  }
+  
+  .masters-carousel-track {
+    width: 90vw;
+    max-width: 400px;
+    height: 400px;
+  }
+  
+  .masters-card {
+    width: 90vw;
+    max-width: 400px;
+    height: 400px;
+  }
+  
+  .masters-card-image {
+    height: 180px;
+  }
+  
+  .masters-card-info {
+    height: calc(100% - 180px);
+    padding: 20px;
+  }
+  
+  .masters-card-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .masters-like-btn {
+    align-self: flex-start;
+    transform: translateY(-260px);
+  }
+  
+  .masters-placeholder-text {
+    font-size: 80px;
+  }
+  
+  .masters-likes-badge {
+    top: 15px;
+    right: 15px;
+    padding: 8px 14px;
+  }
+  
+  .masters-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  
+  .masters-prev-btn {
+    left: 10px;
+  }
+  
+  .masters-next-btn {
+    right: 10px;
+  }
+  
+  /* Приховуємо стрілки на дуже маленьких екранах */
+  @media (max-width: 400px) {
+    .masters-carousel-btn {
+      display: none;
+    }
+  }
+  
+  .masters-indicator {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .masters-features-grid {
+    gap: 20px;
+  }
+  
+  .masters-feature-card {
+    padding: 25px 18px;
+  }
+  
+  .masters-feature-card h4 {
+    font-size: 18px;
+  }
+  
+  .masters-favorites-section {
+    padding: 30px 20px;
+  }
+  
+  .masters-favorites-header h3 {
+    font-size: 1.6rem;
+  }
+  
+  .masters-booking-cta {
+    padding: 30px 20px;
+  }
+  
+  .masters-booking-cta h3 {
+    font-size: 1.6rem;
+  }
+  
+  .masters-cta-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* Дуже маленькі мобільні пристрої */
+@media (max-width: 400px) {
+  .masters-main-title {
+    font-size: 1.9rem;
+  }
+  
+  .masters-card-name {
+    font-size: 22px;
+  }
+  
+  .masters-card-description {
+    font-size: 14px;
+  }
+  
+  .masters-detail-text {
+    font-size: 14px;
+  }
+  
+  .masters-section-title {
+    font-size: 1.8rem;
+  }
+  
+  .masters-stat-value {
+    font-size: 14px;
+  }
+  
+  .masters-hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .masters-carousel-track {
+    height: 420px;
+  }
+  
+  .masters-card {
+    height: 420px;
+  }
+  
+  .masters-card-image {
+    height: 160px;
+  }
+  
+  .masters-card-info {
+    height: calc(100% - 160px);
+    padding: 18px;
+  }
+}
+
+/* Ландшафтна орієнтація на мобільних пристроях */
+@media (max-height: 600px) and (orientation: landscape) {
+  .masters-carousel-track {
+    height: 350px;
+  }
+  
+  .masters-card {
+    height: 350px;
+  }
+  
+  .masters-card-image {
+    height: 150px;
+  }
+  
+  .masters-card-info {
+    height: calc(100% - 150px);
+    padding: 15px;
+  }
+  
+  .masters-card-name {
+    font-size: 20px;
+  }
+  
+  .masters-card-description {
+    font-size: 14px;
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .masters-card-details {
+    margin-bottom: 15px;
+  }
+}
+
+/* Підтримка темної теми (опційно) */
+@media (prefers-color-scheme: dark) {
+  .masters-main-page {
+    background: #0f172a;
+    color: #f1f5f9;
+  }
+  
+  .masters-card {
+    background: #1e293b;
+    color: #f1f5f9;
+  }
+  
+  .masters-card-info {
+    background: #1e293b;
+  }
+  
+  .masters-card-name,
+  .masters-section-title,
+  .masters-feature-card h4,
+  .masters-booking-cta h3 {
+    color: #f1f5f9;
+  }
+  
+  .masters-card-description,
+  .masters-feature-card p,
+  .masters-booking-cta p,
+  .masters-detail-text,
+  .masters-like-count {
+    color: #cbd5e1;
+  }
+  
+  .masters-detail-item,
+  .masters-like-btn {
+    background: #334155;
+  }
+  
+  .masters-card-description {
+    background: #334155;
+    border-left-color: #06b6d4;
+  }
+  
+  .masters-feature-card {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .masters-booking-cta {
+    background: #1e293b;
+  }
+  
+  .masters-no-masters {
+    background: #1e293b;
+    color: #f1f5f9;
+  }
+  
+  .masters-no-masters h3 {
+    color: #f1f5f9;
+  }
+  
+  .masters-no-masters p {
+    color: #cbd5e1;
+  }
+}
+
+/* Анімація появи для мобільних */
+@media (max-width: 768px) {
+  .masters-card {
+    animation: masters-mobile-slide 0.5s ease-out;
+  }
+  
+  @keyframes masters-mobile-slide {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Плавні переходи для всіх адаптивних змін */
+.masters-card,
+.masters-carousel-track,
+.masters-card-image,
+.masters-card-info,
+.masters-feature-card,
+.masters-stat-item {
+  transition: all 0.3s ease-in-out;
 }
