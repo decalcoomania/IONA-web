@@ -1376,7 +1376,7 @@
     margin-left: 15px;
   }
   .stats-container{
-    transform: translateX(-50px);
+    transform: translateX(-20px);
     margin-left: 50px;
   }
   .stats-grid {
