@@ -327,7 +327,7 @@ const HomePage = () => {
               
               {/* Кнопка Learn More */}
               <button type="submit" className="consultation-submit-btn">
-                Learn More
+                Get your Consultation
               </button>
             </form>
           </div>

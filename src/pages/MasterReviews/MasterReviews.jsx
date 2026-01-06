@@ -20,7 +20,7 @@ const MasterReviews = () => {
   const [showWorkModal, setShowWorkModal] = useState(false);
   const [selectedWork, setSelectedWork] = useState(null);
 
-  // Masters data
+  // Masters data - тільки Анастасія та Юрій
   const mastersData = [
     {
       id: 3,
@@ -34,96 +34,214 @@ const MasterReviews = () => {
       rating: 5.0,
       reviews: 54,
       description: 'Creates cool hairstyles and natural-looking extensions.'
-    }
-  ];
-
-  // Works Gallery
-  const initialWorksGallery = [
-    {
-      id: 1,
-      title: 'Color + Haircut',
-      beforeImage: '/images/ba/tanya.jpg',
-      afterImage: '/images/ba/tanya2.jpg',
-      clientName: 'Tanyushka',
-      review: 'I wanted a radical change. Anastasia said: say no more — and turned me purple 💜😈 Perfect color, perfect cut, and now my friends are fighting over my stylist\'s contact.',
-      rating: 5,
-      service: 'Coloring + Haircut',
-      date: '2024-03-10'
-    },
-    {
-      id: 2,
-      title: 'Color + Haircut',
-      beforeImage: '/images/ba/diana1.jpg',
-      afterImage: '/images/ba/diana2.jpg',
-      clientName: 'Diana',
-      review: 'I wanted a radical change and got it! Anastasiia chose the perfect shade and haircut style. All my friends ask who my master is!',
-      rating: 5,
-      service: 'Coloring + Haircut',
-      date: '2024-02-28'
-    },
-    {
-      id: 3,
-      title: 'Damaged Hair Restoration',
-      beforeImage: '/images/ba/nastya1.jpg',
-      afterImage: '/images/ba/nastya2.jpg',
-      clientName: 'Anastasiia',
-      review: 'After an unsuccessful coloring in another salon, my hair was in terrible condition. Anastasia saved it! After 3 procedures, my hair became healthy and shiny.',
-      rating: 5,
-      service: 'Restoration Procedures',
-      date: '2024-02-15'
     },
     {
       id: 4,
-      title: 'Evening Hairstyle',
-      beforeImage: '/images/ba/roksa1.jpg',
-      afterImage: '/images/ba/roksa2.png',
-      clientName: 'Roksolana',
-      review: 'Finally found a master who makes perfect evening hairstyles! Anastasia created an incredible look for my wedding. Everything held up all day!',
-      rating: 5,
-      service: 'Evening Styling',
-      date: '2024-01-20'
+      name: 'Yurii Propiv',
+      position: 'Color Specialist',
+      image: '/images/masters/yura.png',
+      experience: '7 years',
+      specialty: 'Fantasy Colors, Ombre',
+      galleryCount: 28,
+      likes: 87,
+      rating: 4.7,
+      reviews: 29,
+      description: 'Master of vibrant fantasy colors and seamless ombre transitions.'
     }
   ];
 
-  // Reviews
-  const sampleReviews = [
-    {
-      id: 1,
-      author: 'Maria Kovalenko',
-      date: '2024-03-15',
-      rating: 5,
-      comment: 'Anastasia is a true professional! Did hair extensions - the result exceeded all expectations. The hair looks natural, easy to care for. I recommend!',
-      service: 'Hair Extensions',
-      photos: []
-    },
-    {
-      id: 2,
-      author: 'Olga Petrenko',
-      date: '2024-03-10',
-      rating: 5,
-      comment: 'Went for a haircut and coloring. Anastasia considered all my wishes and advised a shade that perfectly suits my skin. Very satisfied!',
-      service: 'Haircut + Coloring',
-      photos: []
-    },
-    {
-      id: 3,
-      author: 'Anna Sydorenko',
-      date: '2024-03-05',
-      rating: 5,
-      comment: 'Finally found my master! Anastasia is not only a talented stylist but also a great psychologist. Always supports and advises. Thank you for the great work!',
-      service: 'Complex Care',
-      photos: []
-    },
-    {
-      id: 4,
-      author: 'Iryna Melnyk',
-      date: '2024-02-28',
-      rating: 5,
-      comment: 'Did keratin straightening. The result is impressive! Hair is smooth, shiny, easy to comb. Anastasia is very attentive to details.',
-      service: 'Keratin Straightening',
-      photos: []
-    }
-  ];
+  // Works Gallery для кожного майстра
+  const getWorksByMasterId = (id) => {
+    const works = {
+      3: [ // Анастасія Филипів
+        {
+          id: 1,
+          title: 'Color + Haircut',
+          beforeImage: '/images/ba/tanya.jpg',
+          afterImage: '/images/ba/tanya2.jpg',
+          clientName: 'Tanyushka',
+          review: 'I wanted a radical change. Anastasia said: say no more — and turned me purple 💜😈 Perfect color, perfect cut, and now my friends are fighting over my stylist\'s contact.',
+          rating: 5,
+          service: 'Coloring + Haircut',
+          date: '2024-03-10'
+        },
+        {
+          id: 2,
+          title: 'Color + Haircut',
+          beforeImage: '/images/ba/diana1.jpg',
+          afterImage: '/images/ba/diana2.jpg',
+          clientName: 'Diana',
+          review: 'I wanted a radical change and got it! Anastasiia chose the perfect shade and haircut style. All my friends ask who my master is!',
+          rating: 5,
+          service: 'Coloring + Haircut',
+          date: '2024-02-28'
+        },
+        {
+          id: 3,
+          title: 'Damaged Hair Restoration',
+          beforeImage: '/images/ba/nastya1.jpg',
+          afterImage: '/images/ba/nastya2.jpg',
+          clientName: 'Anastasiia',
+          review: 'After an unsuccessful coloring in another salon, my hair was in terrible condition. Anastasia saved it! After 3 procedures, my hair became healthy and shiny.',
+          rating: 5,
+          service: 'Restoration Procedures',
+          date: '2024-02-15'
+        },
+        {
+          id: 4,
+          title: 'Evening Hairstyle',
+          beforeImage: '/images/ba/roksa1.jpg',
+          afterImage: '/images/ba/roksa2.png',
+          clientName: 'Roksolana',
+          review: 'Finally found a master who makes perfect evening hairstyles! Anastasia created an incredible look for my wedding. Everything held up all day!',
+          rating: 5,
+          service: 'Evening Styling',
+          date: '2024-01-20'
+        }
+      ],
+      4: [ // Юрій Пропів
+        {
+          id: 5,
+          title: 'Fantasy Color Transformation',
+          beforeImage: '/images/ba/before1.jpg',
+          afterImage: '/images/ba/vika2.png',
+          clientName: 'Viktoria',
+          review: 'Yurii created incredible rainbow hair for me! Perfect color transitions and excellent care. My hair looks amazing and feels healthy.',
+          rating: 5,
+          service: 'Fantasy Coloring',
+          date: '2024-03-12'
+        },
+        {
+          id: 6,
+          title: 'Ombre Makeover',
+          beforeImage: '/images/ba/kolya1.jpg',
+          afterImage: '/images/ba/kolya2.jpg',
+          clientName: 'Nikshit',
+          review: 'Paid for a f*cking ombre. What I got is a hair crime so severe, I\'m under witness protection in a beanie. This is a whole new level of messed up.',
+          rating: 0,
+          service: 'Ombre Coloring',
+          date: '2024-03-05'
+        },
+        {
+          id: 7,
+          title: 'Vibrant Green Transformation',
+          beforeImage: '/images/ba/pups1.jpg',
+          afterImage: '/images/ba/pups2.png',
+          clientName: 'Anastasiia',
+          review: 'Went in for a nice green dye job, left with this bullsht. The stylist butchered my hair. It\'s fcking awful. Do not go here.',
+          rating: 1,
+          service: 'Vibrant Color',
+          date: '2024-02-20'
+        },
+        {
+          id: 8,
+          title: 'Red Fantasy',
+          beforeImage: '/images/ba/roksa2.png',
+          afterImage: '/images/ba/morkva1.png',
+          clientName: 'Roksolana',
+          review: 'Amazing red fantasy colors! Yurii created a unique shade that perfectly suits me. Professional and creative work.',
+          rating: 4.9,
+          service: 'Fantasy Color',
+          date: '2024-02-10'
+        }
+      ]
+    };
+    
+    return works[id] || [];
+  };
+
+  // Default reviews для кожного майстра
+  const getDefaultReviewsByMasterId = (id) => {
+    const defaultReviews = {
+      3: [ // Анастасія Филипів
+        {
+          id: 1,
+          author: 'Maria Kovalenko',
+          date: '2024-03-15',
+          rating: 5,
+          comment: 'Anastasia is a true professional! Did hair extensions - the result exceeded all expectations. The hair looks natural, easy to care for. I recommend!',
+          service: 'Hair Extensions',
+          photos: []
+        },
+        {
+          id: 2,
+          author: 'Olga Petrenko',
+          date: '2024-03-10',
+          rating: 5,
+          comment: 'Went for a haircut and coloring. Anastasia considered all my wishes and advised a shade that perfectly suits my skin. Very satisfied!',
+          service: 'Haircut + Coloring',
+          photos: []
+        },
+        {
+          id: 3,
+          author: 'Anna Sydorenko',
+          date: '2024-03-05',
+          rating: 5,
+          comment: 'Finally found my master! Anastasia is not only a talented stylist but also a great psychologist. Always supports and advises. Thank you for the great work!',
+          service: 'Complex Care',
+          photos: []
+        },
+        {
+          id: 4,
+          author: 'Iryna Melnyk',
+          date: '2024-02-28',
+          rating: 5,
+          comment: 'Did keratin straightening. The result is impressive! Hair is smooth, shiny, easy to comb. Anastasia is very attentive to details.',
+          service: 'Keratin Straightening',
+          photos: []
+        }
+      ],
+      4: [ // Юрій Пропів
+        {
+          id: 1001,
+          author: 'Kateryna Ivanova',
+          date: '2024-03-18',
+          rating: 5,
+          comment: 'Yurii is a color wizard! My fantasy colors look amazing and last long. Very professional and creative approach.',
+          service: 'Fantasy Coloring',
+          photos: []
+        },
+        {
+          id: 1002,
+          author: 'Alina Petrova',
+          date: '2024-03-10',
+          rating: 4.7,
+          comment: 'Great ombre work! Yurii listened to all my wishes and created exactly what I wanted. Perfect color transition.',
+          service: 'Ombre',
+          photos: []
+        },
+        {
+          id: 1003,
+          author: 'Natalia Sidorova',
+          date: '2024-03-01',
+          rating: 4.9,
+          comment: 'I\'ve been going to Yurii for 3 years now. Always perfect results with fantasy colors. He really understands color theory!',
+          service: 'Color Correction',
+          photos: []
+        },
+        {
+          id: 1004,
+          author: 'Viktoria Melnyk',
+          date: '2024-02-25',
+          rating: 5,
+          comment: 'Yurii transformed my damaged hair with amazing colors while keeping it healthy. True professional!',
+          service: 'Coloring + Treatment',
+          photos: []
+        },
+        {
+          id: 1005,
+          author: 'Oksana Shevchenko',
+          date: '2024-02-15',
+          rating: 4.8,
+          comment: 'Amazing work with bright colors! Yurii knows exactly how to make hair look vibrant without damaging it.',
+          service: 'Vibrant Coloring',
+          photos: []
+        }
+      ]
+    };
+    
+    return defaultReviews[id] || [];
+  };
 
   // Open work modal
   const openWorkModal = (work) => {
@@ -177,6 +295,34 @@ const MasterReviews = () => {
     );
   };
 
+  // Get services by master ID
+  const getServicesByMasterId = (id) => {
+    const services = {
+      3: [ // Анастасія
+        'Haircuts',
+        'Coloring',
+        'Extensions',
+        'Styling',
+        'Restoration',
+        'Keratin',
+        'Evening Hairstyles',
+        'Consultations'
+      ],
+      4: [ // Юрій
+        'Fantasy Colors',
+        'Ombre',
+        'Balayage',
+        'Color Correction',
+        'Vibrant Coloring',
+        'Pastel Colors',
+        'Hair Painting',
+        'Color Consultation'
+      ]
+    };
+    
+    return services[id] || [];
+  };
+
   useEffect(() => {
     setIsLoading(true);
     setError('');
@@ -186,6 +332,10 @@ const MasterReviews = () => {
     if (foundMaster) {
       setMaster(foundMaster);
       
+      // Load works gallery for this master
+      const masterWorks = getWorksByMasterId(parseInt(masterId));
+      setWorksGallery(masterWorks);
+      
       // Load reviews
       try {
         const savedReviews = localStorage.getItem(`master_${masterId}_reviews`);
@@ -193,14 +343,14 @@ const MasterReviews = () => {
           const parsedReviews = JSON.parse(savedReviews);
           setReviews(parsedReviews.slice(0, 50));
         } else {
-          setReviews(sampleReviews);
-          localStorage.setItem(`master_${masterId}_reviews`, JSON.stringify(sampleReviews));
+          const defaultReviews = getDefaultReviewsByMasterId(parseInt(masterId));
+          setReviews(defaultReviews);
+          localStorage.setItem(`master_${masterId}_reviews`, JSON.stringify(defaultReviews));
         }
       } catch (error) {
-        setReviews(sampleReviews);
+        const defaultReviews = getDefaultReviewsByMasterId(parseInt(masterId));
+        setReviews(defaultReviews);
       }
-      
-      setWorksGallery(initialWorksGallery);
     }
     
     setTimeout(() => setIsLoading(false), 500);
@@ -502,14 +652,11 @@ const MasterReviews = () => {
               <div className="mr-services">
                 <h3>Services</h3>
                 <div className="mr-services-list">
-                  <span className="mr-service-tag">Haircuts</span>
-                  <span className="mr-service-tag">Coloring</span>
-                  <span className="mr-service-tag">Extensions</span>
-                  <span className="mr-service-tag">Styling</span>
-                  <span className="mr-service-tag">Restoration</span>
-                  <span className="mr-service-tag">Keratin</span>
-                  <span className="mr-service-tag">Evening Hairstyles</span>
-                  <span className="mr-service-tag">Consultations</span>
+                  {getServicesByMasterId(parseInt(masterId)).map((service, index) => (
+                    <span key={index} className="mr-service-tag">
+                      {service}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

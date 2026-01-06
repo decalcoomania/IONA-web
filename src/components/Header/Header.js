@@ -68,7 +68,6 @@ const Header = () => {
     { id: 'masters', label: 'Our Masters', onClick: () => handleNavigation('/masters') },
     { id: 'ar', label: 'Virtual Try-On', onClick: () => handleNavigation('/ar-hair') },
     { id: 'about', label: 'About Us', onClick: () => scrollToSection('about') },
-    { id: 'consultation', label: 'Consultation', onClick: () => scrollToSection('consultation') },
     { 
       id: 'profile', 
       label: userData ? 'My Profile' : 'Sign In', 

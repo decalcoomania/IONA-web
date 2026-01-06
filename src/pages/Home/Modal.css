@@ -560,19 +560,37 @@
 }
 
 /* Адаптивность */
+/* ========== АДАПТИВНІСТЬ ДЛЯ МОДАЛЬНОГО ВІКНА ========== */
+
+/* Для планшетів та маленьких ноутбуків */
 @media (max-width: 1200px) {
   .iona-modal-content {
-    width: 98%;
+    width: 96%;
+    max-height: 85vh;
   }
   
   .iona-modal-header,
   .iona-modal-body,
   .iona-modal-footer {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .iona-modal-body {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+  }
+  
+  .iona-map-container {
+    height: 280px;
+  }
+  
+  .iona-contact-card {
+    height: 330px;
   }
 }
 
+/* Для планшетів */
 @media (max-width: 992px) {
   .iona-modal-body {
     grid-template-columns: 1fr;
@@ -583,123 +601,28 @@
     padding-right: 0;
   }
   
-  .iona-modal-header {
-    padding: 40px 30px 25px;
+  .iona-modal-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
   }
   
-  .iona-modal-body {
-    padding: 30px;
-  }
-  
-  .iona-modal-footer {
-    padding: 30px 30px 40px;
-  }
-  
-  .iona-modal-title {
-    font-size: 36px;
-  }
-  
-  .iona-modal-text p {
-    font-size: 17px;
-  }
-}
-
-@media (max-width: 768px) {
-  .iona-modal-content {
-    width: 100%;
-    border-radius: 24px;
-    margin: 10px;
-  }
-  
-  .iona-modal-header {
-    padding: 35px 25px 20px;
-  }
-  
-  .iona-modal-body {
-    padding: 25px;
-    gap: 35px;
-  }
-  
-  .iona-modal-footer {
-    padding: 25px 25px 35px;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .iona-modal-title {
-    font-size: 32px;
-  }
-  
-  .iona-close-modal {
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-  }
-  
-  .iona-map-container {
-    height: 280px;
-  }
-  
-  .iona-map-actions {
-    grid-template-columns: 1fr;
+  .iona-map-container,
+  .iona-contact-card {
+    height: 320px;
   }
   
   .iona-contact-card {
-    padding: 30px 25px;
+    margin-top: 0;
   }
   
-  .iona-book-appointment-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .iona-modal-overlay {
-    padding: 15px;
-  }
-  
-  .iona-modal-header {
-    padding: 30px 20px 20px;
-  }
-  
-  .iona-modal-body {
-    padding: 20px;
-  }
-  
-  .iona-modal-footer {
-    padding: 25px 20px 30px;
-  }
-  
-  .iona-modal-title {
-    font-size: 28px;
-    padding-left: 20px;
-  }
-  
-  .iona-modal-title::before {
-    width: 6px;
-  }
-  
-  .iona-modal-text {
-    font-size: 16px;
-    line-height: 1.8;
-  }
-  
-  .iona-modal-highlight {
-    padding: 25px 20px;
-  }
-  
-  .iona-map-container {
-    height: 250px;
-  }
-  
-  .iona-contact-card {
-    padding: 25px 20px;
+  .iona-contact-info {
+    gap: 20px;
   }
   
   .iona-contact-item {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 12px;
   }
   
   .iona-contact-icon {
@@ -710,5 +633,343 @@
   
   .iona-contact-value {
     font-size: 16px;
+  }
+}
+
+/* Для планшетів (вертикальна орієнтація) */
+@media (max-width: 768px) {
+  .iona-modal-content {
+    width: 98%;
+    max-height: 90vh;
+    margin: 10px;
+    border-radius: 25px;
+  }
+  
+  .iona-modal-header {
+    padding: 35px 30px 20px;
+  }
+  
+  .iona-modal-body {
+    padding: 25px 30px;
+    gap: 35px;
+  }
+  
+  .iona-modal-footer {
+    padding: 25px 30px 35px;
+  }
+  
+  .iona-modal-title {
+    font-size: 32px;
+  }
+  
+  .iona-modal-text p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  .iona-modal-sidebar {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .iona-map-container {
+    height: 300px;
+  }
+  
+  .iona-contact-card {
+    height: auto;
+  }
+  
+  .iona-contact-info {
+    gap: 25px;
+  }
+  
+  .iona-map-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Для мобільних пристроїв */
+@media (max-width: 576px) {
+  .iona-modal-overlay {
+    padding: 15px;
+    align-items: flex-start;
+  }
+  
+  .iona-modal-content {
+    width: 100%;
+    margin: 0;
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+  
+  .iona-modal-header {
+    padding: 25px 20px 15px;
+  }
+  
+  .iona-modal-body {
+    padding: 20px;
+    gap: 30px;
+  }
+  
+  .iona-modal-footer {
+    padding: 20px 20px 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .iona-modal-title {
+    font-size: 26px;
+    padding-left: 15px;
+  }
+  
+  .iona-modal-title::before {
+    width: 5px;
+    top: 6px;
+    bottom: 6px;
+  }
+  
+  .iona-close-modal {
+    width: 45px;
+    height: 45px;
+    font-size: 26px;
+  }
+  
+  .iona-modal-text p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .iona-modal-highlight {
+    padding: 20px;
+    margin: 30px 0;
+  }
+  
+  .iona-modal-highlight h4 {
+    font-size: 18px;
+  }
+  
+  .iona-modal-highlight p {
+    font-size: 14px;
+  }
+  
+  .iona-map-container {
+    height: 250px;
+  }
+  
+  .iona-map-overlay {
+    padding: 15px;
+  }
+  
+  .iona-map-info h4 {
+    font-size: 20px;
+  }
+  
+  .iona-map-address,
+  .iona-map-hours {
+    font-size: 14px;
+  }
+  
+  .iona-contact-card {
+    padding: 25px 20px;
+  }
+  
+  .iona-contact-card h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .iona-contact-item {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .iona-contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .iona-contact-label {
+    font-size: 12px;
+  }
+  
+  .iona-contact-value {
+    font-size: 15px;
+  }
+  
+  .iona-map-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .iona-modal-cta {
+    font-size: 18px;
+  }
+  
+  .iona-book-appointment-btn {
+    width: 100%;
+    padding: 16px 30px;
+    font-size: 16px;
+    justify-content: center;
+  }
+}
+
+/* Для маленьких мобільних пристроїв */
+@media (max-width: 480px) {
+  .iona-modal-header {
+    padding: 20px 15px 15px;
+  }
+  
+  .iona-modal-body {
+    padding: 15px;
+    gap: 25px;
+  }
+  
+  .iona-modal-footer {
+    padding: 15px 15px 25px;
+  }
+  
+  .iona-modal-title {
+    font-size: 24px;
+    padding-left: 12px;
+  }
+  
+  .iona-modal-text p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .iona-modal-highlight {
+    padding: 15px;
+    margin: 20px 0;
+  }
+  
+  .iona-map-container {
+    height: 220px;
+  }
+  
+  .iona-map-overlay {
+    padding: 12px;
+  }
+  
+  .iona-map-info h4 {
+    font-size: 18px;
+  }
+  
+  .iona-map-address,
+  .iona-map-hours {
+    font-size: 13px;
+  }
+  
+  .iona-contact-card {
+    padding: 20px 15px;
+  }
+  
+  .iona-contact-card h4 {
+    font-size: 18px;
+  }
+  
+  .iona-contact-info {
+    gap: 20px;
+  }
+  
+  .iona-contact-value {
+    font-size: 14px;
+  }
+  
+  .iona-modal-cta {
+    font-size: 16px;
+  }
+  
+  .iona-book-appointment-btn {
+    padding: 14px 25px;
+    font-size: 15px;
+  }
+}
+
+/* Для дуже маленьких екранів */
+@media (max-width: 360px) {
+  .iona-modal-title {
+    font-size: 22px;
+  }
+  
+  .iona-modal-text p {
+    font-size: 13px;
+  }
+  
+  .iona-map-container {
+    height: 200px;
+  }
+  
+  .iona-map-overlay {
+    padding: 10px;
+  }
+  
+  .iona-contact-card {
+    padding: 18px 12px;
+  }
+  
+  .iona-contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .iona-contact-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+/* Для ландшафтного режиму на мобільних */
+@media (max-height: 600px) and (orientation: landscape) {
+  .iona-modal-overlay {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+  
+  .iona-modal-content {
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  
+  .iona-modal-body {
+    grid-template-columns: 1fr;
+  }
+  
+  .iona-modal-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .iona-map-container,
+  .iona-contact-card {
+    height: 250px;
+  }
+  
+  .iona-contact-card {
+    overflow-y: auto;
+  }
+  
+  .iona-contact-info {
+    gap: 15px;
+  }
+}
+
+/* Для ретина-дисплеїв */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iona-modal-content::before {
+    height: 8px;
+  }
+  
+  .iona-map-frame {
+    filter: saturate(1.3) contrast(1.2);
+  }
+  
+  .iona-contact-card::before {
+    height: 6px;
   }
 }

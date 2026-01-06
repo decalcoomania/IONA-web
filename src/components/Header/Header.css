@@ -282,8 +282,8 @@
 }
 
 .menu-book-btn:hover {
-  background: #ffd700;
-  color: #01b1a8;
+  background: #007377;
+  color: #ffffff;
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -347,9 +347,59 @@
   box-shadow: 0 5px 15px rgba(1, 177, 168, 0.3);
 }
 /* Адаптивність */
+/* Адаптивність */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  
+  .header-right {
+    margin-right: -120px;
+  }
+  
+  .menu-button {
+    margin-left: -150px;
+  }
+  
+  .profile-button {
+    margin-right: -120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-content {
+    justify-content: flex-start;
+  }
+  
+  .logo {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+  
+  .header-right {
+    margin-right: -50px;
+    margin-left: auto;
+  }
+  
+  .menu-button {
+    margin-left: 0;
+  }
+  
+  .profile-button {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
   .logo-title {
-    font-size: 24px;
+    font-size: 32px;
   }
   
   .menu-button,
@@ -358,27 +408,105 @@
   }
   
   .menu-content {
-    width: 250px;
+    width: 280px;
   }
   
   .menu-link {
-    font-size: 20px;
-    padding: 12px 15px;
+    font-size: 18px !important;
+    padding: 14px 18px;
   }
   
   .menu-book-btn {
-    padding: 15px 20px;
+    padding: 16px 24px;
     font-size: 16px;
+  }
+  
+  .header-right {
+    gap: 15px;
+    margin-right: 0;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .container {
     padding: 0 15px;
   }
   
   .logo-title {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+  }
+  
+  .menu-button,
+  .profile-button {
+    padding: 8px;
+  }
+  
+  .menu-content {
+    width: 260px;
+  }
+  
+  .menu-header {
+    padding: 15px;
+  }
+  
+  .close-menu {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .menu-nav {
+    padding: 30px 15px;
+  }
+  
+  .menu-link {
+    font-size: 16px !important;
+    padding: 12px 15px;
+  }
+  
+  .menu-book-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+  
+  .header-right {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-title {
+    font-size: 24px;
+  }
+  
+  .menu-content {
+    width: 240px;
+  }
+  
+  .menu-link {
+    font-size: 15px !important;
+    padding: 10px 12px;
+  }
+  
+  .menu-book-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    gap: 10px;
+  }
+  
+  .menu-btn-arrow {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .logo-title {
+    font-size: 22px;
     letter-spacing: 1px;
   }
   
@@ -387,11 +515,73 @@
   }
   
   .menu-link {
-    font-size: 18px;
+    font-size: 14px !important;
   }
   
   .menu-book-btn {
-    padding: 12px 15px;
-    font-size: 14px;
+    font-size: 13px;
+  }
+  
+  .menu-button,
+  .profile-button {
+    padding: 6px;
+  }
+  
+  .menu-icon {
+    width: 20px;
+  }
+  
+  .profile-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Для мобільних пристроїв у ландшафтному режимі */
+@media (max-height: 600px) and (orientation: landscape) {
+  .main-header {
+    padding: 10px 0;
+  }
+  
+  .main-header.scrolled {
+    padding: 8px 0;
+  }
+  
+  .menu-nav {
+    padding: 20px 15px;
+    overflow-y: auto;
+    max-height: 60vh;
+  }
+  
+  .menu-item {
+    margin-bottom: 10px;
+  }
+  
+  .menu-link {
+    padding: 10px 15px;
+    font-size: 16px !important;
+  }
+}
+
+/* Для пристроїв з великим дісплеєм */
+@media (min-width: 1900px) {
+  .container {
+    max-width: 1800px;
+  }
+}
+
+/* Для ретина-дисплеїв */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .main-header {
+    padding: 18px 0;
+  }
+  
+  .main-header.scrolled {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-button,
+  .profile-button {
+    border-width: 1.5px;
   }
 }
