@@ -1372,12 +1372,12 @@
   .stats-block {
     padding: 20px 10px;
     border-radius: 15px;
-    transform: translateX(50px);
+    transform: translateX(40px);
     margin-left: 15px;
   }
   .stats-container{
     transform: translateX(-20px);
-    margin-left: 50px;
+    margin-left: 70px;
   }
   .stats-grid {
     gap: 20px;
