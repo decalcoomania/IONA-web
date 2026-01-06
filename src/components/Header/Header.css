@@ -478,7 +478,7 @@
 @media (max-width: 480px) {
   .logo-title {
     font-size: 24px;
-    transform: translateX(60px);
+    transform: translateX(51px);
   }
   
   .menu-content {

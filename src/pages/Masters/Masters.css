@@ -810,12 +810,13 @@
     font-size: 15px;
     padding: 15px;
     margin-bottom: 20px;
+    margin-top: 30px;
   }
   
   .masters-reviews-btn {
     padding: 3px 3px;
     font-size: 15px;
-    margin-top: -230px;
+    margin-top: -270px;
     width: 150px;
     height: 45px;
     margin-left: 210px;
@@ -1053,6 +1054,10 @@
     height: 160px;
   }
   
+  .masters-like-btn {
+    align-self: flex-start;
+    transform: translateY(-260px);
+  }
   .masters-card-info {
     height: calc(100% - 160px);
     padding: 18px;
