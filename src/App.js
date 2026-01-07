@@ -7,7 +7,7 @@ import Services from './pages/Services/Services';
 import IonaShop from './pages/IonaShop/IonaShop';
 import Masters from './pages/Masters/Masters';
 import MasterReviews from './pages/MasterReviews/MasterReviews';
-import ARHairStyle from './pages/ARHairStyle/ARHairStyle';
+
 import Profile from './pages/Profile/Profile';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
@@ -36,7 +36,7 @@ function App() {
           <Route path="/iona-shop" element={<IonaShop />} />
           <Route path="/masters" element={<Masters />} />
           <Route path="/master/:masterId/reviews" element={<MasterReviews />} />
-          <Route path="/ar-hair" element={<ARHairStyle />} />
+
           
           {/* Авторизація */}
           <Route path="/login" element={<Login />} />

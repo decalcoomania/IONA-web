@@ -66,7 +66,7 @@ const Header = () => {
     { id: 'services', label: 'Services', onClick: () => handleNavigation('/services') },
     { id: 'shop', label: 'IONA Shop', onClick: () => handleNavigation('/iona-shop') },
     { id: 'masters', label: 'Our Masters', onClick: () => handleNavigation('/masters') },
-    { id: 'ar', label: 'Virtual Try-On', onClick: () => handleNavigation('/ar-hair') },
+
     { id: 'about', label: 'About Us', onClick: () => scrollToSection('about') },
     { 
       id: 'profile', 

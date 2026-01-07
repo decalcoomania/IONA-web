@@ -68,7 +68,7 @@ const Masters = () => {
       id: 5,
       name: 'Lisa Taylor',
       position: 'Treatment Expert',
-      image: '/images/masters/lisa.jpg',
+      image: '/images/masters/lisa.png',
       experience: '9 years',
       specialty: 'Keratin Treatments, Hair Health',
       galleryCount: 15,
